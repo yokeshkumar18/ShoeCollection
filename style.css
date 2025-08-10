@@ -1,0 +1,206 @@
+:root{
+  --bg: #f7f9fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #2563eb;
+  --radius: 12px;
+  --container: 1100px;
+  --gap: 1rem;
+  --shadow-1: 0 6px 18px rgba(2,6,23,0.04);
+  --shadow-2: 0 12px 30px rgba(2,6,23,0.08);
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Layout container */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: var(--gap);
+  padding: 1rem 0;
+}
+.brand{
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav{
+  display:flex;
+  gap: 0.75rem;
+  align-items:center;
+}
+.nav a{
+  color: var(--muted);
+  text-decoration:none;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+.nav a:hover{color:var(--text)}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-primary{
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+}
+.btn-outline{
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  color: var(--muted);
+  background: transparent;
+}
+
+/* Nav toggle (mobile) */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:0;
+  font-size:1.25rem;
+  cursor:pointer;
+}
+
+/* Hero */
+.hero{padding: 3.5rem 0}
+.hero-inner{
+  display:flex;
+  gap: 2rem;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero-content{flex:1;min-width:0}
+.hero h1{
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  margin:0 0 0.6rem;
+  line-height:1.08;
+}
+.hero p{color:var(--muted);margin:0 0 1rem}
+.hero-cta{display:flex;gap:0.75rem;flex-wrap:wrap}
+.hero-card{
+  width:420px;
+  max-width:40%;
+  flex:0 0 auto;
+}
+.hero-card img{
+  display:block;
+  width:100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+}
+
+/* Features */
+.features{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 2.5rem 0;
+}
+.feature{
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+}
+.feature h3{margin:0 0 0.4rem}
+.feature p{margin:0;color:var(--muted)}
+
+/* Pricing */
+.pricing{padding:2.5rem 0;text-align:center}
+.pricing-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem;
+  margin-top:1rem;
+}
+.plan{
+  background:var(--card);
+  padding:1.25rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-1);
+}
+.plan.popular{transform:translateY(-6px);box-shadow:var(--shadow-2)}
+.price{font-size:1.25rem;margin:0.5rem 0}
+.plan ul{list-style:none;padding:0;margin:0 0 1rem}
+.plan li{color:var(--muted);padding:0.25rem 0}
+
+/* Footer */
+.site-footer{padding:1.25rem 0;margin-top:2rem}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.footer-inner p{margin:0;color:var(--muted)}
+.footer-inner .social a{margin-left:1rem;color:var(--muted);text-decoration:none}
+
+/* Utility */
+.center{text-align:center}
+
+/* Responsive breakpoints */
+@media (max-width: 900px){
+  .hero-inner{flex-direction:column-reverse;align-items:stretch}
+  .hero-card{max-width:100%;width:100%}
+  .features{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .nav a:not(.btn-primary){display:none}
+  .nav-toggle{display:block}
+  .nav{
+    position: fixed;
+    right: 1rem;
+    top: 64px;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--card);
+    padding: 0.75rem;
+    border-radius: 10px;
+    display: none;
+    box-shadow: var(--shadow-2);
+  }
+  .nav.open{display:flex}
+}
+
+@media (min-width: 901px){
+  .nav-toggle{display:none}
+}
+
+/* Small screens tweaks */
+@media (max-width: 420px){
+  .header-inner{padding:0.75rem 0}
+  .brand{font-size:1rem}
+  .hero{padding:2rem 0}
+  .hero h1{font-size:1.4rem}
+}

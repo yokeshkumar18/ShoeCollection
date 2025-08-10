@@ -1,0 +1,102 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Responsive Landing Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Save this file as `index.html` and the CSS below as `styles.css` in the same folder. -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Elevate labs</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#">Get Started</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main>    
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>React js enthusiast</h1>
+          <p>A Simple landing page template — from elevate lab project.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#">Start Free</a>
+            <a class="btn btn-outline" href="#features">Learn More</a>
+          </div>
+        </div>
+     
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <article class="feature">
+        <h3>Fully Responsive</h3>
+        <p>Works on mobile, tablet and desktop using a simple grid and media queries.</p>
+      </article>
+      <article class="feature">
+        <h3>Fast to Customize</h3>
+        <p>Clear structure and utility classes to speed up styling and iteration.</p>
+      </article>
+      <article class="feature">
+        <h3>Accessible</h3>
+        <p>Uses semantic HTML, good color contrast and keyboard-friendly controls.</p>
+      </article>
+    </section>
+
+    <section id="pricing" class="pricing container">
+      <h2>Simple Pricing</h2>
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>Free</h3>
+          <p class="price">₹0</p>
+          <ul>
+            <li>Basic features</li>
+            <li>Community support</li>
+          </ul>
+          <a class="btn btn-primary" href="#">Choose</a>
+        </div>
+        <div class="plan popular">
+          <h3>Pro</h3>
+          <p class="price">₹499 / month</p>
+          <ul>
+            <li>Advanced features</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-primary" href="#">Choose</a>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3>
+          <p class="price">Contact us</p>
+          <ul>
+            <li>Custom solutions</li>
+            <li>Dedicated support</li>
+          </ul>
+          <a class="btn btn-outline" href="#">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> YourBrand — All rights reserved.</p>
+      <div class="social">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
